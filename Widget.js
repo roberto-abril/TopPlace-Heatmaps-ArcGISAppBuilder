@@ -18,13 +18,11 @@ var clazz = declare([BaseWidget], {
     postCreate: function() {
       this.inherited(arguments);
       this.writelog('TopPlace::postCreate', arguments);
-        //this.writelog('multiplecheck:' + this.config.TP.params.multiplecheck);
-
     },
     // start up child widgets
     startup: function() {
         this.inherited(arguments);
-        var c = {
+        var conf = {
             multiplecheck : this.config.TP.params.multiplecheck,
             opacity : this.config.TP.params.opacity,
             api_key : this.config.TP.params.api_key,
@@ -32,8 +30,7 @@ var clazz = declare([BaseWidget], {
             apiurl : this.config.TP.params.apiurl,
             hmstyle : this.config.TP.params.hmstyle
         };
-        //this.writelog('multiplecheck:' + this.config.TP.params.multiplecheck);
-        if(c.multiplecheck == 'on'){
+        if(conf.multiplecheck == 'on'){
             dojo.destroy("tp_hm_mr");
         }else{
             dojo.destroy("tp_hm_mc");
@@ -42,28 +39,27 @@ var clazz = declare([BaseWidget], {
         var currentLayer = undefined;
         var currentLayers = [];
         dojo.query('.tp_hm input').on('change',function(){
-            if (c.multiplecheck == "on"){
+            if (conf.multiplecheck == "on"){
                 for(var x = 0; x < currentLayers.length; x++){
                     map.removeLayer(currentLayers[x]);
                 }
+                currentLayers = [];
                 var items = dojo.query('#tp_hm_mc input:checked');
                 for(var x = 0; x < items.length; x++){
                     var t = items[x].value;
-                    var cl = new WebTiledLayer(c.apiurl+"/v2/tile?appid=" + c.app_id + "&appkey=" + c.api_key + "&z=${level}&x=${col}&y=${row}&o=" + c.opacity + "&v=02&t=" + t + "&s=" + c.hmstyle,{
+                    var cl = new WebTiledLayer(conf.apiurl+"/v2/tile?appid=" + conf.app_id + "&appkey=" + conf.api_key + "&z=${level}&x=${col}&y=${row}&o=" + conf.opacity + "&v=02&t=" + t + "&s=" + conf.hmstyle,{
                         id:"TopPlace Heatmap: " + t
                     });
                     currentLayers.push(cl);
                     map.addLayer(cl);
                 }
-
-
             }else {
                 var t = dojo.byId(this.id).value;
                 if (currentLayer) {
                     map.removeLayer(currentLayer);
                 }
                 if(t != "") {
-                    currentLayer = new WebTiledLayer(c.apiurl+"/v2/tile?appid=" + c.app_id + "&appkey=" + c.api_key + "&z=${level}&x=${col}&y=${row}&o=" + c.opacity + "&v=02&t=" + t + "&s=" + c.hmstyle,{
+                    currentLayer = new WebTiledLayer(conf.apiurl+"/v2/tile?appid=" + conf.app_id + "&appkey=" + conf.api_key + "&z=${level}&x=${col}&y=${row}&o=" + conf.opacity + "&v=02&t=" + t + "&s=" + conf.hmstyle,{
                         id:"TopPlace Heatmap: " + t
                     });
                     map.addLayer(currentLayer);
@@ -86,19 +82,10 @@ var clazz = declare([BaseWidget], {
     },
 
     onOpen: function() {
-      // summary:
-      //      Overrides method of same name in jimu._BaseWidget.
         this.writelog('TopPlace::onOpen', arguments);
-
-      // add code to execute whenever the widget is opened
     },
-
     onClose: function() {
-      // summary:
-      //      Overrides method of same name in jimu._BaseWidget.
         this.writelog('TopPlace::onClose', arguments);
-
-      // add code to execute whenever the widget is closed
     }
   });
 

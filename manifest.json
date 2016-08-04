@@ -15,8 +15,5 @@
     "hasStyle": true,
     "hasConfig": true,
     "hasUIFile": true
-  },
-  "properties": {
-    "supportMultiInstance": false
   }
 }
