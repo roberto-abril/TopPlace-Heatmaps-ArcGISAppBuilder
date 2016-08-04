@@ -1,0 +1,22 @@
+{
+  "name": "TopPlaceHM",
+  "label": "TopPlace Heatmaps",
+  "2D": true,
+  "3D": false,
+  "platform": "HTML",
+  "version": "0.0.1",
+  "author": "RA",
+  "description": "TopPlace Heatmap layers.",
+  "copyright": "",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+    "inPanel": false,
+    "hasLocale": true,
+    "hasStyle": true,
+    "hasConfig": true,
+    "hasUIFile": true
+  },
+  "properties": {
+    "supportMultiInstance": false
+  }
+}

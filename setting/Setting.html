@@ -1,0 +1,104 @@
+<div style="width:100%;">
+  <p>${nls.disclaimer} <a href="${nls.disclaimerUrl}" target='_blank'>${nls.disclaimerUrl}</a></p>
+  <table class="setting-table input-table" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="first">${nls.opacity}</td>
+        <td class="second">
+          <select data-dojo-type="dijit/form/Select"
+                  data-dojo-props='style:{width:"200px"}, trim:true'
+                  data-dojo-attach-point="opacity">
+            <option value="0.3">0.3</option>
+            <option value="0.4">0.4</option>
+            <option value="0.5" selected="selected">0.5</option>
+            <option value="0.6">0.6</option>
+            <option value="0.7">0.7</option>
+            <option value="0.8">0.8</option>
+            <option value="0.9">0.9</option>
+          </select>
+        </td>
+        <td class="third">
+          <div class="help-icon"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="first">${nls.hmstyle}</td>
+        <td class="second">
+          <select data-dojo-type="dijit/form/Select"
+                  data-dojo-props='style:{width:"200px"}, trim:true'
+                  data-dojo-attach-point="hmstyle">
+            <option value="clb" selected="selected">Colombo</option>
+            <option value="mgl">Magallan</option>
+            <option value="sdk">Sky Dark</option>
+          </select>
+        </td>
+        <td class="third">
+          <div class="help-icon"></div>
+        </td>
+      </tr>
+      <tr>
+          <td class="first">${nls.multiplecheck}</td>
+          <td class="second">
+              <input
+                      type="checkbox"
+                      data-dojo-type="dijit/form/CheckBox"
+                      data-dojo-attach-point="multiplecheck"
+                      data-dojo-props=''
+              />
+          </td>
+          <td class="third">
+              <div class="help-icon"></div>
+          </td>
+      </tr>
+      <tr>
+          <td class="first">${nls.apiurl}</td>
+          <td class="second">
+              <input
+                      type="text"
+                      value = "http://pre-m.avuxiapis.com"
+                      data-dojo-type="dijit/form/TextBox"
+                      required="true"
+                      placeHolder="http://pre-m.avuxiapis.com"
+                      data-dojo-attach-point="apiurl"
+                      data-dojo-props='style:{width:"200px"}, trim:true'
+              />
+          </td>
+          <td class="third">
+              <div class="help-icon"></div>
+          </td>
+      </tr>
+      <tr>
+        <td class="first">${nls.appId}</td>
+        <td class="second">
+          <input
+            type="text"
+            data-dojo-type="dijit/form/TextBox"
+            required="true"
+            placeHolder="xxxxxxxx"
+            data-dojo-attach-point="app_id"
+            data-dojo-props='style:{width:"200px"}, trim:true'
+          />
+        </td>
+        <td class="third">
+          <div class="help-icon"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="first">${nls.apiKey}</td>
+        <td class="second">
+          <input
+            type="text"
+            data-dojo-type="dijit/form/TextBox"
+            required="true"
+            placeHolder="xxxxxxxxxxxxxxxx"
+            data-dojo-attach-point="api_key"
+            data-dojo-props='style:{width:"300px"}, trim:true'
+          />
+        </td>
+        <td class="third">
+          <div class="help-icon"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

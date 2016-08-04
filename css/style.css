@@ -1,0 +1,30 @@
+.on-screen-boilerplate h3 {
+  font-size: 1.2em;
+}
+.on-screen-boilerplate h3, p {
+  margin-top: 0;
+}
+/* add additional custom styles */
+.tp_hm{
+  background-color: white;
+  border-radius: 5px;
+}
+.tp_hm ul{
+  list-style: none;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.tp_hm li{
+  margin-bottom: 6px;
+}
+.tp_hm label{
+  border-radius: 5px;
+  padding: 2px;
+  display: block;
+  box-shadow: rgba(0, 0, 0, 0.74902) 1px 1px 1px 0px;
+  cursor: pointer;
+}
+.tp_hm input{
+  margin-right: 5px;
+}
