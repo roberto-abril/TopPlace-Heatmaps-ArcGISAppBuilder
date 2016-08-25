@@ -8,6 +8,4 @@ define({
     btnpartying: "Zonas para ir de fiesta",
     btnnone:"Ninguna"
   }
-  // add supported locales below:
-  // , "zh-cn": true
 });
